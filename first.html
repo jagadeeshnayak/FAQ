@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive FAQ Page</title>
+    <style>
+
+        /* *{
+            background-image: url("https://cdn.pixabay.com/photo/2015/02/01/20/49/faq-620303_960_720.jpg");
+        } */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .faq {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .icon {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .question.active .icon {
+            transform: rotate(180deg); 
+        }
+
+        .answer {
+            padding: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .answer.show {
+            max-height: 500px; /* Adjust as needed */ 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+            <div class="question">
+                What is this website about?
+                <span class="icon">+</span>
+            </div>
+            <div class="answer">
+                FAQ pages serve multiple purposes. They improve customer service by providing readily available answers to common inquiries,
+                 reducing the need for direct support interactions. This enhances user experience by making information easily accessible and
+                  improving website navigation. By proactively addressing concerns, FAQs build trust and credibility. They also reduce support
+                   costs by minimizing inquiries and can improve SEO by providing valuable, searchable content. Furthermore, FAQs educate customers,
+                    increase satisfaction, onboard new users, and support sales and marketing efforts. Finally, by analyzing frequently asked questions,
+                     companies gain valuable insights into customer needs and preferences.
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                How can I contact you?
+                <span class="icon">+</span>
+            </div>
+            <div class="answer">
+                You can contact us via email at [jagabanoth15@gmail.com],
+                 by phone at [9515272468], or 
+                 For quick inquiries, you can also connect with us on social media: [https://www.linkedin.com/in/jagadeesh-nayak-b35494215/]."
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                What are your hours of operation?
+                <span class="icon">+</span>
+            </div>
+            <div class="answer">
+                We are open Monday-Friday from 9:00 AM to 5:00 PM.
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                Do you offer any discounts?
+                <span class="icon">+</span>
+            </div>
+            <div class="answer">
+                Yes, we offer discounts for [mention discounts, e.g., students, seniors, etc.]. Show us your appreciation for learning, 
+                serving, or simply enjoying life a little more. Students, seniors, educators, and military personnel receive [percentage]
+                 off their purchases. It's our way of saying thank you for all that you do."
+
+
+ 
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.question');
+
+        questions.forEach(question => {
+            const icon = question.querySelector('.icon');
+            const answer = question.nextElementSibling;
+
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                answer.classList.toggle('show');
+                icon.textContent = question.classList.contains('active') ? '-' : '+'; 
+            });
+        });
+    </script>
+
+</body>
+</html>
